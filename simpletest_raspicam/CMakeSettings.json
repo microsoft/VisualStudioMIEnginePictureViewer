@@ -1,0 +1,34 @@
+﻿{
+  "configurations": [
+    {
+      "name": "raspberrypi-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "cmakeToolchain": "C:/temp/raspberry/toolchain-rpi.cmake",
+      "environments": [
+        {
+          "RASPBIAN_ROOTFS": "c:/temp/raspberry/arm-linux-gnueabihf/sysroot",
+          "PATH": "c:/temp/raspberry/bin;${env.PATH}"
+        }
+      ],
+      "inheritEnvironments": [ "gcc-arm" ],
+      "variables": [
+        {
+          "name": "OpenCV_DIR",
+          "value": "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\cmake\\opencv4"
+        },
+        {
+          "name": "raspicam_DIR",
+          "value": "D:\\raspicam\\out\\install\\raspberrypi-Debug\\lib\\cmake"
+        }
+      ],
+      "intelliSenseMode": "linux-gcc-arm"
+    }
+
+  ]
+}

@@ -1,33 +1,81 @@
-# Project
+# PictureViewer
+Sample MIEngine debugger UIVisualizer for RasberryPi cameras. 
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repo contains two projects, in /src is the PictureView VSIX project and in /simpletest_raspicam is a sample CMake 
+project that can be used to test the PictureViewer. These instructions assume you are already familiar with the Linux
+build and debugging features of Visual Studio and have already set up your raspberryPi with a camera and 
+installed installed gdb.
 
-As the maintainer of this project, please make a few updates:
+## PictureViewer Project
+This is a VSIX project. You will need to edit the PictureView.csproj and change this line:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+&lt;HintPath&gt;..\..\..\MIEngine\bin\Lab.Debug\Microsoft.DebugEngineHost.dll&lt;/HintPath&gt;
 
-## Contributing
+to point to your instance of Visual Studio. Something like:
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+&lt;HintPath&gt;my-VS-root-path\Common7\IDE\CommonExtensions\Microsoft\MDD\Debugger\Microsoft.DebugEngineHost.dll&lt;/HintPath&gt;
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+Open the .sln file in Visual Studio. Build and debug PictureViewer. Once running VS will open a new experimental version of
+Visual Studio with your VSIX installed. When it opens then open the folder simpletest_raspicam. Build the project and 
+configure for debugging according to the instructions below. 
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+In order to test the PictureViewer:
+1. Set a breakpoint on simpletest_raspicam.cpp at the line containing "Camera.grab()".
+2. Select the "DebugOnPi" debug target.
+3. Hit F5. 
 
-## Trademarks
+At this point gdb will fire up on the remote target and VS will eventually stop at the breakpoint.
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+4. Open the Locals window.
+5. On the line containing the value for variable "Camera" you should see a small magifying glass icon in the "Value" column.
+   Click on the icon.
+
+At this point VS will open a window which will initially be blank, but will eventually contain a picture from the camera on
+your Pi. Hitting the "next" button below the picture will refresh the view with another shot from the camera.
+
+## simpletest_raspicam Project
+
+This project builds using raspberry pi cross compiler tools. You will need to adjust the values of the environment variables
+RASPIAN_ROOTFS and PATH in CMAKESettings.json for the location of your tools. You will also need to set the value of cmakeToolchain
+to point to your raspberryPi toolchain file.
+
+The project depends upon two other packages: raspicam and opencv. You will need to copy, build, and install these projects also using the
+raspberryPi toolset. So you will have to make similar CMakeSettings configuration changes when building those projects as well.
+
+The simpletest_raspicam project needs to know where to find the above two packages. Adjust the values of OpenCV_DIR and raspicam_DIR in
+CMakeSettings .json to point to your package installations.
+
+Once you have successfully built simpletest_raspicam copy the shared libraries from your package installations to some directory (e.g. ~/camera)
+on your raspberryPi.
+
+~/camera:
+
+libopencv_calib3d.so.405     libopencv_gapi.so.405       libopencv_objdetect.so.405  libraspicam_cv.so
+libopencv_core.so.405        libopencv_highgui.so.405    libopencv_photo.so.405      libraspicam.so.0.1
+libopencv_dnn.so.405         libopencv_imgcodecs.so.405  libopencv_stitching.so.405  
+libopencv_features2d.so.405  libopencv_imgproc.so.405    libopencv_videoio.so.405
+libopencv_flann.so.405       libopencv_ml.so.405         libopencv_video.so.405
+
+Add a Linux Launch (gdb) debugging configuration to your project. It should look something like this:
+
+```
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cppgdb",
+      "name": "DebugOnPi",
+      "project": "CMakeLists.txt",
+      "projectTarget": "simpletest_raspicam",
+      "debuggerConfiguration": "gdb",
+      "MIMode": "gdb",
+      "args": [],
+      "env": {},
+      "deployDirectory": "~/camera",
+      "remoteMachineName": "-1836894802;xxx.yyy.zz.ppp (username=pi, port=22, authentication=Password)",
+      "preDebugCommand": "export LD_LIBRARY_PATH=~/camera"
+    }
+  ]
+}
+```

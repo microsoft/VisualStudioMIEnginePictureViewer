@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="1" MenuName="Raspberry Camera Visualizer"/>
+	<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="2" MenuName="Raspberry Camera (OpenCV) Visualizer"/>
+	<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="3" MenuName="Raspberry Still Camera Visualizer"/>
+	<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="4" MenuName="Raspberry Still Camera (OpenCV) Visualizer"/>
+
+	<Type Name="raspicam::RaspiCam *">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="1" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Cv *">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="2" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Still *">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="3" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Still_Cv *">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="4" />
+	</Type>
+	<Type Name="raspicam::RaspiCam">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="1" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Cv">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="2" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Still">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="3" />
+	</Type>
+	<Type Name="raspicam::RaspiCam_Still_Cv">
+		<UIVisualizer ServiceId="{0A73397B-D550-4BFE-94C9-C0E5122DC06F}" Id="4" />
+	</Type>
+</AutoVisualizer>

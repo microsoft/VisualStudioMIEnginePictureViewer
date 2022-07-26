@@ -1,0 +1,273 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "simpletest_raspicam"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"LINK_DIRECTORIES",
+			"find_package",
+			"target_link_libraries",
+			"INCLUDE_DIRECTORIES"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"D:/raspicam/out/install/raspberrypi-Debug/lib/cmake/raspicamConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 23,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 22,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-mcpu=arm1176jzf-s -mfpu=vfp -mfloat-abi=hard -Ic:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/include  -L/opt/cross-pi-gcc/arm-linux-gnueabihf/lib -Wl,-rpath-link,/opt/cross-pi-gcc/arm-linux-gnueabihf/lib -L/opt/cross-pi-gcc/lib -Wl,-rpath-link,/opt/cross-pi-gcc/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/opt/vc/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/local/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/local/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/blas -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/blas -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/lapack -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/lapack -g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "D:/raspicam/out/install/raspberrypi-Debug/include"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "D:/opencv-4.5.5/opencv-4.5.5/out/install/RaspberryPi-Debug/include/opencv4"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			],
+			"sysroot" : 
+			{
+				"path" : "c:/temp/raspberry/arm-linux-gnueabihf/sysroot"
+			}
+		}
+	],
+	"id" : "simpletest_raspicam::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-mcpu=arm1176jzf-s -mfpu=vfp -mfloat-abi=hard -Ic:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/include  -L/opt/cross-pi-gcc/arm-linux-gnueabihf/lib -Wl,-rpath-link,/opt/cross-pi-gcc/arm-linux-gnueabihf/lib -L/opt/cross-pi-gcc/lib -Wl,-rpath-link,/opt/cross-pi-gcc/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/opt/vc/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/opt/vc/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/local/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/local/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/blas -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/blas -Lc:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/lapack -Wl,-rpath-link,c:/temp/raspberry/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/lapack -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LD:\\raspicam\\out\\install\\raspberrypi-Debug\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,D:/raspicam/out/install/raspberrypi-Debug/lib:/opt/vc/lib:D:/opencv-4.5.5/opencv-4.5.5/out/install/RaspberryPi-Debug/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal_core.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal_util.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lraspicam",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal_core.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal_util.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "c:\\temp\\raspberry\\arm-linux-gnueabihf\\sysroot\\opt\\vc\\lib\\libmmal.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lraspicam",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_gapi.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_highgui.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_ml.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_objdetect.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_photo.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_stitching.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_video.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_videoio.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lraspicam_cv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_imgcodecs.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_dnn.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_calib3d.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_features2d.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_flann.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_imgproc.so.4.5.5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\opencv-4.5.5\\opencv-4.5.5\\out\\install\\RaspberryPi-Debug\\lib\\libopencv_core.so.4.5.5",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"sysroot" : 
+		{
+			"path" : "c:/temp/raspberry/arm-linux-gnueabihf/sysroot"
+		}
+	},
+	"name" : "simpletest_raspicam",
+	"nameOnDisk" : "simpletest_raspicam",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "simpletest_raspicam.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
